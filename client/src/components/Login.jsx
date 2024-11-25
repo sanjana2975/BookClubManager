@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Input from "./cards/Input"; // Ensure correct path to Input component
-import {currentUserStore}  from "../store/currentUserStore.js";
+import Input from "./cards/Input"; 
+import {currentUserStore}  from "../data/currentUserStore.js";
 
 const Login = () => {
   const navigate = useNavigate();

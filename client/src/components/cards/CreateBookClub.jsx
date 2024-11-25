@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import Nav from "../layout/Nav";
-import Input from "../cards/Input";
 import useBookClubStore from '../../data/BookClubStore';
-
 
 const CreateBookClub = () => {
   const addClub = useBookClubStore((state) => state.addClub);
@@ -42,7 +40,6 @@ const CreateBookClub = () => {
       status: 'active'
     };
 
-    // clubs[newClub.id] = newClub;
     addClub(newClub);
 
     setFormData({

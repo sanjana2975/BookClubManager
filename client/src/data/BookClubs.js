@@ -10,7 +10,8 @@ const clubs = [
         participants: ["Diana Prince", "Tom Hardy", "Neo Anderson", "Trinity O'Connor", "Morpheus King"],
         cadence: "Weekly",
         location: "Online (Slack)",
-        status: "active"
+        status: "active",
+        authcode: 1111
     },
     {
         id: 2,
@@ -23,7 +24,8 @@ const clubs = [
         participants: ["Samantha Green", "Morpheus King", "Michael Jackson", "Chris Hemsworth", "Lara Croft"],
         cadence: "Monthly",
         location: "DevOps Conference",
-        status: "active"
+        status: "active",
+        authcode: 2222
     },
     {
         id: 3,
@@ -36,7 +38,8 @@ const clubs = [
         participants: ["Alice Johnson", "Evan White", "Grace Lee", "Tom Hardy", "Samantha Green"],
         cadence: "Weekly",
         location: "Local Coffee Shop",
-        status: "active"
+        status: "active",
+        authcode: 3333
     },
     {
         id: 4,
@@ -49,7 +52,8 @@ const clubs = [
         participants: ["Bob Smith", "Alice Johnson", "Emma Stone", "Chris Hemsworth", "Sophia Davis"],
         cadence: "Bi-weekly",
         location: "Library Conference Room",
-        status: "active"
+        status: "active",
+        authcode: 4444
     },
     {
         id: 5,
@@ -62,7 +66,8 @@ const clubs = [
         participants: ["Charlie Brown", "Evan White", "Lara Croft", "Michael Jackson", "Tina Turner"],
         cadence: "Monthly",
         location: "Data Science Lab",
-        status: "inactive"
+        status: "inactive",
+        authcode: 5555
     },
     {
         id: 6,
@@ -75,7 +80,8 @@ const clubs = [
         participants: ["Alice Johnson", "Bob Smith", "Charlie Brown", "Diana Prince", "Evan White"],
         cadence: "Bi-weekly",
         location: "New York City Public Library",
-        status: "active"
+        status: "active",
+        authcode: 6666
     },
     {
         id: 7,
@@ -88,7 +94,8 @@ const clubs = [
         participants: ["John Doe", "Lara Croft", "Neo Anderson", "Trinity O'Connor", "Morpheus King"],
         cadence: "Weekly",
         location: "Online (Zoom)",
-        status: "inactive"
+        status: "inactive",
+        authcode: 7777
     },
     {
         id: 8,
@@ -101,7 +108,8 @@ const clubs = [
         participants: ["Emma Stone", "Chris Hemsworth", "Sophia Davis", "Evan White", "Tina Turner"],
         cadence: "Bi-weekly",
         location: "Tech Meetup Hub",
-        status: "active"
+        status: "active",
+        authcode: 8888
     },
     {
         id: 9,
@@ -114,7 +122,8 @@ const clubs = [
         participants: ["Grace Lee", "Michael Jackson", "Tom Hardy", "Alice Johnson", "Trinity O'Connor"],
         cadence: "Monthly",
         location: "Blockchain Lab",
-        status: "active"
+        status: "active",
+        authcode: 9999
     },
     {
         id: 10,
@@ -127,7 +136,8 @@ const clubs = [
         participants: ["Evan White", "Lara Croft", "Bob Smith", "Sophia Davis", "Tina Turner"],
         cadence: "Weekly",
         location: "Cloud Tech Conference",
-        status: "active"
+        status: "active",
+        authcode: 1000
     }
 ];
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from "../layout/Nav";
-import Card from "../cards/Card";
+import Card from "./Card";
 import clubs from "../../data/BookClubs";
 import user from "../../data/UserData";
 
-function Home() {
+function Manage() {
   // Filter the list to get only the enrolled book clubs
   const enrolledClubs = clubs.filter((club) => user.enrolledBookClubs.includes(club.bookClubName));
 
@@ -19,7 +19,7 @@ function Home() {
         {enrolledClubs.length > 0 ? (
           enrolledClubs.map((club) => (
             <Card
-              key={club.id}
+              id={club._id}
               bookClubName={club.bookClubName}
               description={club.description}
               organizer={club.organizer}
@@ -28,6 +28,7 @@ function Home() {
               cadence={club.cadence}
               status={club.status}
               isEnrolled={true}
+              authcode= {club.authcode}
             />
           ))
         ) : (
@@ -46,4 +47,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Manage;

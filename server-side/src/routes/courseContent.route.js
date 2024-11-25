@@ -2,11 +2,9 @@ import express from 'express';
 import mongoose from 'mongoose';
 import CourseContent from '../models/CourseContent.model.js'
 
-
 const CourseContentRouter = express.Router();
 
 CourseContentRouter.post('/', async (req, res) => {
-
     try {
         // Check if a document already exists for this bookClub
         const objectId = new mongoose.Types.ObjectId(req.body.bookClub);
@@ -71,7 +69,6 @@ CourseContentRouter.get("/", async (req, res) => {
 
 CourseContentRouter.get("/:bookClubId", async (req, res) => {
     try {
-        //const { BookClubId } = req.params.bookClubId;
         console.log(req.params.bookClubId);
         const allContents = await CourseContent.find({});
         console.log('All contents in database:', allContents);

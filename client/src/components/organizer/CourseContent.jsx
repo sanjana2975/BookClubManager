@@ -4,8 +4,6 @@ import Nav from "../layout/Nav.jsx";
 import { useParams } from 'react-router-dom';
 import axios from "axios";
 
-
-
 const CourseContent = () => {
   const [participants] = useState([
     "Alice Johnson",
@@ -14,8 +12,6 @@ const CourseContent = () => {
     "Diana Rodriguez",
     "Ethan Kim",
   ]);
-
-  
 
   const [chapters, setChapters] = useState([
     {

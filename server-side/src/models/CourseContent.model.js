@@ -21,15 +21,13 @@ const CourseContentSchema = new mongoose.Schema({
         },
         recordingLink: {
             type: String,
-            required: true
+            required: false
         }
     }]
 }, {
     timestamps: true
 
 })
-
-
 
 const CourseContent = mongoose.model('CourseContent', CourseContentSchema);
 
