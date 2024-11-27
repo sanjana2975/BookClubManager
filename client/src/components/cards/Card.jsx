@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Book, User, Users, Calendar, Info, Pencil } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Input from "./Input";
+import Notification from "../layout/Notification"
 
 // Sub-component for displaying each section (Organizer, Book, Attendees, etc.)
 const InfoSection = ({ icon, title, content, iconClass, textClass }) => {
@@ -47,18 +48,18 @@ function Card(props) {
     );
   };
 
-  const handleEditSubmit = (e) => {
-    e.preventDefault();
+  // const handleEditSubmit = (e) => {
+  //   e.preventDefault();
     
-    // Check if the entered password matches the club's authcode
-    if (parseInt(password) === props.authcode) {
-      // Navigate to the manage page
-      navigate(`/organizer/${props.id}/manage`);
-      closeModal();
-    } else {
-      setError("Invalid authorization code");
-    }
-  };
+  //   // Check if the entered password matches the club's authcode
+  //   if (parseInt(password) === props.authcode) {
+  //     // Navigate to the manage page
+  //     navigate(`/organizer/${props.id}/manage`);
+  //     closeModal();
+  //   } else {
+  //     setError("Invalid authorization code");
+  //   }
+  // };
 
   return (
     <>
@@ -105,7 +106,7 @@ function Card(props) {
                 {enrollmentState}
               </button>
             )}
-            <Pencil onClick={openEditModal} className="cursor-pointer"/>
+            {/* <Pencil onClick={openEditModal} className="cursor-pointer"/> */}
           </div>
         </div>
       </div>
@@ -189,7 +190,7 @@ function Card(props) {
                 />
               </svg>
             </button>
-            <form onSubmit={handleEditSubmit}>
+            {/* <form onSubmit={handleEditSubmit}>
               <Input 
                 label="Auth Code" 
                 id="123" 
@@ -209,7 +210,7 @@ function Card(props) {
               >
                 Submit
               </button>
-            </form>
+            </form> */}
           </div>
         </div>
       )}
