@@ -18,7 +18,7 @@ function ManageCourseContent(props) {
 
   return (
     <div className="w-[42rem] h-27 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <div className="h-full flex flex-col p-4">
+      <div className="h-full flex flex-col gap-2 p-4">
         {/* Content Container */}
         <div className="flex flex-col flex-grow">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white line-clamp-1">

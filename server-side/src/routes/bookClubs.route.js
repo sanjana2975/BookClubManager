@@ -134,4 +134,16 @@ router.get("/", async (req, res) => {
     }
 });
 
+router.get("/:id", async (req, res) => {
+    const { id } = req.params;
+    try {
+        const bookClub = await BookClubs.findById(id);
+        console.log(bookClub);
+        res.status(200).json(bookClub);
+    }
+    catch (error) {
+        
+    }
+});
+
 export default router;

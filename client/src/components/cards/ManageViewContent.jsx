@@ -23,6 +23,8 @@ const ManageViewContent = () => {
     },
   ]);
 
+  const [bookClubDataState, setBookClubData] = useState([]);
+
   const { courseId } = useParams();
   
   useEffect(() => {
@@ -30,7 +32,10 @@ const ManageViewContent = () => {
       try {
         const response = await axios.get(`/api/contents/${courseId}/`);
         const data = response.data;
-  
+        const bookClubID = data.bookClub;
+        const response2 = await axios.get(`/api/bookclubs/${bookClubID}/`);
+        const bookClubData = response2.data;
+        setBookClubData(bookClubData);
         if (data.chapters && data.chapters.length > 0) {
           const chaptersWithIds = data.chapters.map(chapter => ({
             ...chapter,
@@ -191,6 +196,7 @@ const ManageViewContent = () => {
   return (
     <>
       <Nav />
+      <div>{bookClubDataState.bookClubName}</div>
       <div className="container mx-auto p-4 space-y-6">
         {/* Course Content Section */}
         <div className="bg-white shadow-md rounded-lg p-6">
