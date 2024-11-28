@@ -80,6 +80,7 @@ function Home() {
                             filteredClubs.map((club) => (
                                 <Card
                                     key={club.id}
+                                    id = {club.id}
                                     bookClubName={club.bookClubName}
                                     description={club.description}
                                     organizer={club.organizer}

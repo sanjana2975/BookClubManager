@@ -1,35 +1,55 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from "../layout/Nav";
 import Card from "./Card";
 import clubs from "../../data/BookClubs";
 import user from "../../data/UserData";
+import ManageCourseContent from './ManageCourseContent';
+import React, { useState, useEffect } from "react";
+import axios from 'axios';
+
 
 function Manage() {
   // Filter the list to get only the enrolled book clubs
-  const enrolledClubs = clubs.filter((club) => user.enrolledBookClubs.includes(club.bookClubName));
+
+  const [enrolledBookClubs, setEnrolledBookClubs] = useState([]);
+
+  useEffect(() => {
+
+    const fetchBookClubs = async () => {
+      const response = await axios.get('/api/bookClubs');
+      const clubs = response.data;
+      const enrolledClubs = clubs.filter((club) => user.enrolledBookClubs.includes(club.bookClubName));
+      setEnrolledBookClubs(enrolledClubs);
+    }  
+    fetchBookClubs();
+}, [enrolledBookClubs])
+
+console.log(enrolledBookClubs);
+
+// const enrolledClubs = clubs.filter((club) => user.enrolledBookClubs.includes(club.bookClubName));
 
   return (
     <>
       <Nav />
-      {enrolledClubs.length > 0 && (
+      {enrolledBookClubs.length > 0 && (
         <h2 className="mt-2 text-2xl text-center font-bold text-gray-900 mb-6">View All Your Enrolled Book Clubs:</h2>
       )}
       <div className="-mt-3 flex items-center flex-col">
-        {enrolledClubs.length > 0 ? (
-          enrolledClubs.map((club) => (
-            <Card
-              id={club._id}
-              bookClubName={club.bookClubName}
-              description={club.description}
-              organizer={club.organizer}
-              bookName={club.bookName}
-              noOfAttendees={club.noOfAttendees}
-              cadence={club.cadence}
-              status={club.status}
-              isEnrolled={true}
-              authcode= {club.authcode}
-            />
+        {enrolledBookClubs.length > 0 ? (
+          enrolledBookClubs.map((club) => (
+            // <Card
+            //   id={club._id}
+            //   bookClubName={club.bookClubName}
+            //   description={club.description}
+            //   organizer={club.organizer}
+            //   bookName={club.bookName}
+            //   noOfAttendees={club.noOfAttendees}
+            //   cadence={club.cadence}
+            //   status={club.status}
+            //   isEnrolled={true}
+            //   authcode= {club.authcode}
+            // />
+            <ManageCourseContent Id={club._id} Name={club.bookClubName} Description={club.description}></ManageCourseContent>
           ))
         ) : (
           <div className="bg-white shadow-md rounded-lg p-6 text-center w-80 mt-6">

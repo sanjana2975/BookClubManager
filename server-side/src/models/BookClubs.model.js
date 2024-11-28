@@ -47,7 +47,12 @@ const BookClubsSchema = new mongoose.Schema({
         required: true,
         enum: ['active', 'inactive', 'completed'],
         default: 'active'
-    }
+    },
+
+    enrollments: [{
+        type: String,
+        required:true       
+    }]
 }, {
     timestamps: true // Adds createdAt and updatedAt fields automatically
 });

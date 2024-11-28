@@ -66,7 +66,8 @@ function Organizer() {
             const formattedData = {
                 ...formData,
                 participants: formData.participants.split(',').map(p => p.trim()),
-                status: 'active' // Adding default status
+                status: 'active',
+                enrollments: []// Adding default status
             };
     
             const response = await axios.post('/api/bookclubs', formattedData);

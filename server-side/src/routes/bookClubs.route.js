@@ -7,7 +7,7 @@ const router = express.Router();
 // Endpoint for user to request enrollment in a book club
 router.post('/enroll/:id', async (req, res) => {
     const { id } = req.params;
-    const { userId } = req.body; // Assume userId is passed in the body
+    const { userName } = req.body; // Assume userId is passed in the body
 
     try {
         // Find the book club
@@ -15,12 +15,25 @@ router.post('/enroll/:id', async (req, res) => {
         if (!bookClub) {
             return res.status(404).json({ message: 'Book Club not found' });
         }
-
-        // Find the user
-        const user = await User.findById(userId);
-        if (!user) {
-            return res.status(404).json({ message: 'User not found' });
+        else {
+            const existingBookClub = bookClub;
+            existingBookClub.enrollments = [...existingBookClub.enrollments, userName]
+            savedCourseContent = await existingContent.save();
+            res.status(200).json({
+                message: "Course content updated successfully",
+                data: savedCourseContent
+            });
         }
+
+
+
+        // // Find the user
+        // const user = await User.findById(userId);
+        // if (!user) {
+        //     return res.status(404).json({ message: 'User not found' });
+        // }
+        
+
 
         // Create notification for the organizer
         const notification = {
